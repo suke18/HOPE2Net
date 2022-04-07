@@ -18,8 +18,7 @@ x1 = torch.Tensor(200, 1000)
 x2 = torch.Tensor(200, 1000)
 Hope2Net(x1, x2)
 ```
-This is an illustration of simple feedforward for Hope2Net. <img src="https://render.githubusercontent.com/render/math?math=X_{1}">
- mimics the image feature matrix and <img src="https://render.githubusercontent.com/render/math?math=X_{2}"> represents the position embeddings. When computing these two modalities of features, we enforce them with same dimension for the purpose of allocating weights. The weights will further be learned during the training process. 
+This is an illustration of simple feedforward for Hope2Net. *X1* mimics the image feature matrix and *X2* represents the position embeddings. When computing these two modalities of features, we enforce them with same dimension for the purpose of allocating weights. The weights will further be learned during the training process.
 
 ## Feature extraction
 We use transfer learning approach to extract deep image features for each tile where the barcoded spot is centered. Three state-of-art DL architectures are considered: VGG19, ResNet50, and ViT16. The pre-trained weights on imageNet1k dataset can be accessed by `keras.applicaiton` or `pytorch_pretrained_vit` libraries. Free free to utilize the implementation at [Tile_features.py](https://github.com/suke18/HOPE2Net/blob/master/scripts/Tile_features.py).
